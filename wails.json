@@ -1,23 +1,22 @@
 {
   "$schema": "https://wails.io/schemas/config.v2.json",
-  "name": "SiloRedact",
-  "outputfilename": "SiloRedact",
+  "name": "OneBoardSafePaste",
+  "outputfilename": "OneBoardSafePaste",
   "info": {
-    "companyName": "Alexander McKain",
-    "productName": "SiloRedact",
-    "productVersion": "2.0.0",
-    "copyright": "Copyright © 2026 Alexander McKain",
-    "comments": "https://siloredact.com"
+    "companyName": "OneBoard",
+    "productName": "OneBoard Safe Paste",
+    "productVersion": "1.0.0",
+    "copyright": "Copyright © 2026 OneBoard. Silo-Redact portions Copyright © 2026 Alexander McKain.",
+    "comments": "https://oneboard.io.vn"
   },
   "frontend:install": "npm install",
   "frontend:build": "npm run build",
   "frontend:dev:watcher": "npm run dev",
   "frontend:dev:serverUrl": "auto",
   "preBuildHooks": {
-    "windows/*": "cmd /S /C \"if exist build\\windows\\icon.ico del /f /q build\\windows\\icon.ico & if exist SiloRedact-res.syso del /f /q SiloRedact-res.syso\""
+    "windows/*": "cmd /S /C \"if exist build\\windows\\icon.ico del /f /q build\\windows\\icon.ico & if exist OneBoardSafePaste-res.syso del /f /q OneBoardSafePaste-res.syso\""
   },
   "author": {
-    "name": "AlexanderMckain",
-    "email": "support@siloredact.com"
+    "name": "OneBoard"
   }
 }

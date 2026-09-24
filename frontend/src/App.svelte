@@ -110,7 +110,7 @@
   let resetInProgress = false
   let showAboutModal = false
   let showSettingsModal = false
-  const APP_VERSION = '2.0.0'
+  const APP_VERSION = '1.0.0'
   let rawInputEl
   let dropZoneEl
   let sanitizedOutputEl
@@ -259,7 +259,7 @@
   function downloadOutput() {
     if (!displayedSanitizedOutput) return
     const blob = new Blob([displayedSanitizedOutput], { type: 'text/plain' })
-    const filename = 'SiloRedacted_export.txt'
+    const filename = 'OneBoardSafePaste_export.txt'
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
@@ -405,7 +405,7 @@
       ghostToast = true
       setTimeout(() => (ghostToast = false), 2500)
       if (typeof Notification !== 'undefined' && Notification.permission === 'granted') {
-        new Notification('SiloRedact', { body: message })
+        new Notification('OneBoard Safe Paste', { body: message })
       }
     }
   }
@@ -1005,7 +1005,7 @@
         </button>
       {/if}
       <div class="brand">
-        <img src={brandLogo} alt="SiloRedact" class="brand__logo" />
+        <img src={brandLogo} alt="OneBoard Safe Paste" class="brand__logo" />
       </div>
     </div>
     <div class="tabs" role="tablist" aria-label="Main navigation">
@@ -1071,7 +1071,7 @@
       <button
         type="button"
         class="header__about-btn"
-        title="About SiloRedact"
+        title="About OneBoard Safe Paste"
         aria-label="About"
         on:click={openAboutModal}
       >
@@ -1636,8 +1636,8 @@
       aria-label="Close"
       on:click={(e) => e.target === e.currentTarget && closeAboutModal()}
     >
-      <div class="modal modal--about" role="dialog" aria-modal="true" aria-label="About SiloRedact">
-        <div class="modal__title modal__title--about">About SiloRedact</div>
+      <div class="modal modal--about" role="dialog" aria-modal="true" aria-label="About OneBoard Safe Paste">
+        <div class="modal__title modal__title--about">About OneBoard Safe Paste</div>
         <div class="modal__body modal__body--about modal__body--about-scroll">
           <About appVersion={APP_VERSION} />
         </div>
@@ -1659,14 +1659,14 @@
         <div class="modal__title">Settings</div>
         <div class="modal__body">
           <p class="settings__lead">
-            SiloRedact is open source. All features run locally on your device — no license or activation required.
+            OneBoard Safe Paste is open source. All features run locally on your device — no license or activation required.
           </p>
           <p class="settings__meta">
             Version <span class="settings__version">{APP_VERSION}</span>
           </p>
           <a
             class="settings__link"
-            href="https://github.com/AlexanderMckain/Silo-Redact"
+            href="https://github.com/phat7000/OneBoardSafePaste"
             target="_blank"
             rel="noopener noreferrer"
           >

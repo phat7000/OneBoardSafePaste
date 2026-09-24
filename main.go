@@ -17,7 +17,7 @@ func main() {
 	app := NewApp()
 
 	err := wails.Run(&options.App{
-		Title:             "SiloRedact",
+		Title:             "OneBoard Safe Paste",
 		Width:             1280,
 		Height:            800,
 		MinWidth:          1024,

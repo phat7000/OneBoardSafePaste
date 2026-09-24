@@ -5,17 +5,17 @@
          xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
          IgnorableNamespaces="uap mp rescap">
 
-  <Identity Name="AlexanderMcKain.SiloRedact"
-            Publisher="CN=Alexander McKain"
-            Version="2.0.0.0"
+  <Identity Name="OneBoard.OneBoardSafePaste"
+            Publisher="CN=OneBoard"
+            Version="1.0.0.0"
             ProcessorArchitecture="x64" />
 
   <mp:PhoneIdentity PhoneProductId="00000000-0000-0000-0000-000000000000"
                     PhonePublisherId="00000000-0000-0000-0000-000000000000" />
 
   <Properties>
-    <DisplayName>SiloRedact</DisplayName>
-    <PublisherDisplayName>Alexander McKain</PublisherDisplayName>
+    <DisplayName>OneBoard Safe Paste</DisplayName>
+    <PublisherDisplayName>OneBoard</PublisherDisplayName>
     <Logo>build\windows\StoreLogo.png</Logo>
   </Properties>
 
@@ -28,15 +28,15 @@
   </Resources>
 
   <Applications>
-    <Application Id="SiloRedact"
-                 Executable="SiloRedact.exe"
+    <Application Id="OneBoardSafePaste"
+                 Executable="OneBoardSafePaste.exe"
                  EntryPoint="Windows.FullTrustApplication">
-      <uap:VisualElements DisplayName="SiloRedact"
-                          Description="SiloRedact"
+      <uap:VisualElements DisplayName="OneBoard Safe Paste"
+                          Description="OneBoard Safe Paste"
                           BackgroundColor="transparent"
                           Square150x150Logo="build\windows\Square150x150Logo.png"
                           Square44x44Logo="build\windows\Square44x44Logo.png">
-        <uap:DefaultTile ShortName="SiloRedact" />
+        <uap:DefaultTile ShortName="OneBoard Safe Paste" />
         <uap:SplashScreen Image="build\windows\SplashScreen.png" />
       </uap:VisualElements>
     </Application>

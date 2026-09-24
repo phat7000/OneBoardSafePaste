@@ -42,7 +42,7 @@ func ghostFixWebViewHostVisibility(show bool) {
 }
 
 func ghostFindWailsTopLevel() uintptr {
-	title, _ := syscall.UTF16PtrFromString("SiloRedact")
+	title, _ := syscall.UTF16PtrFromString("OneBoard Safe Paste")
 	hwnd, _, _ := whFindWindowW.Call(0, uintptr(unsafe.Pointer(title)))
 	if hwnd != 0 {
 		return hwnd

@@ -83,7 +83,7 @@ const ShowNotificationEvent = "show-notification"
 // GhostModeSetEvent is emitted when Ghost Mode is turned off from the tray (so the frontend can sync its toggle and storage).
 const GhostModeSetEvent = "ghost-mode-set"
 
-// TrayRequestShowEvent: user chose "Show SiloRedact" in the system tray. Handled in the frontend so
+// TrayRequestShowEvent: user chose "Show OneBoard Safe Paste" in the system tray. Handled in the frontend so
 // SetGhostModeEnabled/WindowShow run on the WebView thread (tray runs on a different goroutine; Win32/WebView2 are not reliable otherwise).
 const TrayRequestShowEvent = "tray-request-show"
 
@@ -128,7 +128,7 @@ func NewApp() *App {
 }
 
 const clipboardWipeDelay = 30 * time.Second
-const clipboardClearedPlaceholder = "[SiloRedact: Clipboard Cleared]"
+const clipboardClearedPlaceholder = "[OneBoard Safe Paste: Clipboard Cleared]"
 
 // SetGhostModeEnabled turns Ghost Mode (background clipboard monitoring) on or off.
 // When on: window is hidden (minimize to tray). When off: window is shown.
@@ -202,12 +202,12 @@ func UpdateTrayMenu() {
 		m.SetTitle("Ghost Mode: ACTIVE")
 		m.Disable()
 		m.Check()
-		systray.SetTooltip("SiloRedact - Protecting Clipboard (right-click for menu)")
+		systray.SetTooltip("OneBoard Safe Paste - Protecting Clipboard (right-click for menu)")
 	} else {
 		m.SetTitle("Ghost Mode: INACTIVE")
 		m.Disable()
 		m.Uncheck()
-		systray.SetTooltip("SiloRedact — Right-click for menu")
+		systray.SetTooltip("OneBoard Safe Paste — Right-click for menu")
 	}
 }
 
@@ -333,9 +333,9 @@ func (a *App) startup(ctx context.Context) {
 		_ = a.SaveRules(a.Rules)
 	}
 
-	// Application menu: SiloRedact submenu with Show (restore window after Ghost hide) and Quit.
+	// Application menu: product submenu with Show (restore window after Ghost hide) and Quit.
 	siloSub := menu.NewMenu()
-	siloSub.Append(menu.Text("Show SiloRedact", nil, func(*menu.CallbackData) {
+	siloSub.Append(menu.Text("Show OneBoard Safe Paste", nil, func(*menu.CallbackData) {
 		if a.ctx != nil {
 			wailsruntime.EventsEmit(a.ctx, TrayRequestShowEvent)
 		}
@@ -347,7 +347,7 @@ func (a *App) startup(ctx context.Context) {
 		}
 	}))
 	appMenu := menu.NewMenu()
-	appMenu.Append(menu.SubMenu("SiloRedact", siloSub))
+	appMenu.Append(menu.SubMenu("OneBoard Safe Paste", siloSub))
 	wailsruntime.MenuSetApplicationMenu(ctx, appMenu)
 
 	// System tray: icon in notification area so user can restore or quit when window is hidden (Ghost Mode).
@@ -394,10 +394,10 @@ func trayOnReady() {
 			systray.SetIcon(icoData)
 		}
 	}
-	systray.SetTooltip("SiloRedact — Right-click for menu")
+	systray.SetTooltip("OneBoard Safe Paste — Right-click for menu")
 	// Add menu items before starting the event loop so the menu is fully built when user clicks.
-	mShow := systray.AddMenuItem("Show SiloRedact", "Show window")
-	mQuit := systray.AddMenuItem("Quit", "Quit SiloRedact")
+	mShow := systray.AddMenuItem("Show OneBoard Safe Paste", "Show window")
+	mQuit := systray.AddMenuItem("Quit", "Quit OneBoard Safe Paste")
 	systray.AddSeparator()
 	trayMu.Lock()
 	trayGhostStatusItem = systray.AddMenuItem("Ghost Mode: INACTIVE", "Ghost Mode status")
