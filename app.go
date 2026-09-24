@@ -104,8 +104,8 @@ var trayGhostStatusItem *systray.MenuItem
 var quittingFromTrayMu sync.Mutex
 var quittingFromTray bool
 
-// trayIconPNG is the system tray icon (Chainlink S logo). Converted to ICO for Windows tray.
-//go:embed frontend/src/assets/images/Chainlink_S_logo2.png
+// trayIconPNG is the OneBoard system tray icon. Converted to ICO for Windows tray.
+//go:embed frontend/src/assets/images/OneBoardSafePaste.png
 var trayIconPNG []byte
 
 type App struct {

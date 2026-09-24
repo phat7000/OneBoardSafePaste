@@ -2,7 +2,7 @@
   import { onDestroy, onMount, tick } from 'svelte'
   import { AddBulkCustomRule, AddCustomRule, DeleteCustomRule, GhostHideToTray, LoadRules, RedactText, ResetRules, RestoreGhostModeFromSettings, SaveRules, SetGhostModeEnabled, SimulatePasteAfterDelay, StartClipboardTimer, StartGhostWatcher, ToggleSatelliteMode } from '../wailsjs/go/main/App.js'
   import { ClipboardSetText, EventsOn, Quit, WindowMinimise, WindowShow, WindowToggleMaximise } from '../wailsjs/runtime/runtime.js'
-  import brandLogo from './assets/images/SR_LOGO3.png'
+  import brandLogo from './assets/images/OneBoardSafePaste.png'
   import About from './components/About.svelte'
 
   const AUTO_COPY_STORAGE_KEY = 'siloRedact_autoCopy'
@@ -1006,6 +1006,7 @@
       {/if}
       <div class="brand">
         <img src={brandLogo} alt="OneBoard Safe Paste" class="brand__logo" />
+        <span class="brand__name">OneBoard Safe Paste</span>
       </div>
     </div>
     <div class="tabs" role="tablist" aria-label="Main navigation">
@@ -1887,6 +1888,10 @@
     max-width: 100px;
   }
 
+  .app--satellite .header .brand__name {
+    display: none;
+  }
+
   .app--satellite .header__right {
     gap: 6px;
   }
@@ -2129,6 +2134,15 @@
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
   }
 
+  .brand__name {
+    color: #f4f4f5;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
   .header .tabs {
     justify-self: center;
     flex-shrink: 0;
@@ -2342,6 +2356,10 @@
   @container (max-width: 720px) {
     .brand__logo {
       max-width: 140px;
+    }
+
+    .brand__name {
+      display: none;
     }
   }
 
