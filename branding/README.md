@@ -1,7 +1,7 @@
 # OneBoard branding assets
 
-`OneBoardSafePaste.ico` is the repository copy of the OneBoard icon master located at
-`D:\OneBoardSafePaste.ico` when this branding baseline was created.
+`OneBoardSafePaste.ico` is the repository copy of the OneBoard icon master used to
+create this branding baseline.
 
 Master source SHA-256:
 `3ECE0692B4502129CB8C4CB6A97062EC241FCA614A2BAE9B8CA6E71BA4AFC6DA`
